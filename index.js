@@ -6,7 +6,7 @@ let audio_fundo
 
 const historia = {
     sinopse: {
-        texto: "<div>Bem-vindo a <span class='font-bold'>'Uns Braços'</span>, um conto de Machado de Assis.<br><br>Você acompanhará a história de Inácio, um jovem de 15 anos que vive e trabalha na casa do rude solicitador Borges. Em meio a uma rotina de solidão e humilhações, ele desenvolve uma admiração secreta e profunda pelos braços de D. Severina, a companheira de seu patrão. Tenha uma boa experiência e boa sorte! Ah, e cuidado com as suas escolhas... elas são mais importantes do que parecem.<img src='./assets/imgs/eyes.gif' class='w-8 inline-block ml-4 -translate-y-1'></img></div>",
+        texto: "<div>Bem-vindo a <span class='font-bold'>'Uns Braços'</span>, um conto de Machado de Assis.<br><br>Você acompanhará a história de Inácio, um jovem de 15 anos que vive e trabalha na casa do rude solicitador Borges. Em meio a uma rotina de solidão e humilhações, ele desenvolve uma admiração secreta e profunda pelos braços de D. Severina, a companheira de seu patrão.<br><br>Tenha uma boa experiência e boa sorte! Ah, e cuidado com as suas escolhas... elas são mais importantes do que parecem.<img src='./assets/imgs/eyes.gif' class='w-8 ml-2 inline-block -translate-y-1'></img></div>",
         styleClass: 'realidade',
         opcoes: [{ texto: "Entendi, vamos começar", target: 'inicio' }]
     },
@@ -34,23 +34,28 @@ const historia = {
         opcoes: [{ texto: "A noite chega. Ir para o quarto.", target: 'quarto' }]
     },
     quarto: {
-        texto: "Em seu quarto, nos fundos da casa, a solidão é sua única companhia. A janela mostra o mar e as montanhas ao longe. A vista lhe traz um sentimento confuso, vago e inquieto, uma mistura de dor e prazer, algo parecido com o que uma planta deve sentir ao criar sua primeira flor.",
+        texto: "Em seu quarto, nos fundos da casa, a solidão é sua única companhia.<br><br>A janela mostra o mar e as montanhas ao longe.<br><br>A vista lhe traz um sentimento confuso, vago e inquieto, uma mistura de dor e prazer, algo parecido com o que uma planta deve sentir ao criar sua primeira flor.",
         styleClass: 'sonho',
         opcoes: [
             { texto: "Pensar na saudade de casa.", target: 'quarto_saudade' },
             { texto: "Ler 'A Princesa Magalona' outra vez.", target: 'ler_livro' },
-            { texto: "Deitar na rede e deixar o sono chegar...", target: 'sonho_inicio' }
+            { texto: "Deitar na rede e deixar o sono chegar...", target: 'sonho_inicio_sem_livro' }
         ]
     },
     quarto_saudade: {
         texto: "<i>Cinco semanas sozinho, fazendo um trabalho que não gosta, longe da sua mãe e irmãs. Você pensa em fugir, mas não consegue. Sente-se preso, acorrentado pelos braços de D. Severina.</i>",
         styleClass: 'sonho',
-        opcoes: [{ texto: "Deixar o sono chegar...", target: 'sonho_inicio' }]
+        opcoes: [{ texto: "Deixar o sono chegar...", target: 'sonho_inicio_sem_livro' }]
     },
     ler_livro: {
         texto: "<i>Você pega um dos livros que trouxe com você, o mesmo que acabou de ler. As páginas estão amareladas. Você nunca entendeu por que todas as heroínas dessas histórias antigas se parecem tanto com D. Severina, mas o fato é que parecem.</i>",
         styleClass: 'sonho',
         opcoes: [{ texto: "Deixar o sono chegar...", target: 'sonho_inicio' }]
+    },
+    sonho_inicio_sem_livro: {
+        texto: "O cansaço te leva para longe...<br>Seus pensamentos se misturam e você adormece. De repente, ela aparece.<br>Ela para, sorri e caminha até a sua rede. São os mesmos braços.",
+        styleClass: 'sonho',
+        opcoes: [{ texto: "...", target: 'sonho_beijo' }]
     },
     sonho_inicio: {
         texto: "O cansaço te leva para longe...<br>Depois de um tempo, você deixa o livro cair e fica olhando para a parede. De repente, ela aparece.<br>Ela para, sorri e caminha até a sua rede. São os mesmos braços.",
@@ -63,7 +68,7 @@ const historia = {
         opcoes: [{ texto: "Acordar", target: 'jantar_pos_sonho' }]
     },
     jantar_pos_sonho: {
-        texto: "Você acorda animado. A sensação do beijo ainda está em seus lábios.<br>À mesa, porém, você a encontra quieta e séria. Um xale cobre seus braços. Você não percebe de imediato, mas vai notar depois. A confusão toma conta de você.",
+        texto: "Você acorda animado. A sensação do beijo ainda está em seus lábios.<br><br>À mesa, porém, você a encontra quieta e séria. Um xale cobre seus braços. Você não percebe de imediato, mas vai notar depois. A confusão toma conta de você.",
         styleClass: 'realidade',
         opcoes: [
             { texto: "Ficar em silêncio e observar de longe.", target: 'observar_distancia' },
@@ -85,7 +90,7 @@ const historia = {
         ]
     },
     confronto: {
-        texto: `Você a encara. Seu sorriso é uma pergunta silenciosa. D. Severina percebe, e o rosto dela se enche de medo e raiva. Ela desvia o olhar bruscamente. Borges, que não é bobo, percebe a tensão no ar.<br><br><span class='font-bold uppercase text-[#ff9999]'>"QUE OLHARES SÃO ESSES, MOLEQUE ATREVIDO?"</span>`,
+        texto: `Você a encara. Seu sorriso é uma pergunta silenciosa. D. Severina percebe, e o rosto dela se enche de medo e raiva. Ela desvia o olhar bruscamente.<br><br>Borges, que não é bobo, percebe a tensão no ar.<br><br><span class='font-bold uppercase text-[#ff9999]'>"QUE OLHARES SÃO ESSES, MOLEQUE ATREVIDO?"</span>`,
         styleClass: 'realidade',
         opcoes: [
             { texto: "Ficar calado, paralisado de medo.", target: 'defesa_severina' },
@@ -93,7 +98,7 @@ const historia = {
         ]
     },
     defesa_severina: {
-        texto: "Antes que você possa reagir, D. Severina se vira para Borges, com uma falsa indignação.<br><br><i>'É o que eu te digo, Borges. Este rapaz anda com uns modos estranhos, um atrevimento... Não me sinto mais à vontade. Olhe só para ele!'</i><br>Ela mente para se proteger, sabendo que você pode ter entendido o que aconteceu com o beijo. A mentira dela decide o seu futuro.",
+        texto: "Antes que você possa reagir, D. Severina se vira para Borges, com uma falsa indignação.<br><br><i>'É o que eu te digo, Borges. Este rapaz anda com uns modos estranhos, um atrevimento... Não me sinto mais à vontade. Olhe só para ele!'</i><br><br>Ela mente para se proteger, temendo que você possa ter entendido o que aconteceu com o beijo. A mentira dela decide o seu futuro.",
         styleClass: 'realidade',
         opcoes: [
             { texto: "...", target: 'fim_expulso' }
@@ -139,7 +144,7 @@ function audio(){
     if (!audio_fundo){    
         audio_fundo = new Audio("./assets/sounds/music.mp3")
         audio_fundo.currentTime = 0
-        audio_fundo.volume = 0.1
+        audio_fundo.volume = 0.03
         audio_fundo.loop = true
     }
     audio_fundo.play().catch(() => {
