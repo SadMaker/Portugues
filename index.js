@@ -1,9 +1,15 @@
 const textoEl = document.getElementById('texto-historia');
 const opcoesEl = document.getElementById('opcoes');
 const bodyEl = document.body;
+let flag = false
 let audio_fundo
 
 const historia = {
+    sinopse: {
+        texto: "<div>Bem-vindo a <span class='font-bold'>'Uns Braços'</span>, um conto de Machado de Assis.<br><br>Você acompanhará a história de Inácio, um jovem de 15 anos que vive e trabalha na casa do rude solicitador Borges. Em meio a uma rotina de solidão e humilhações, ele desenvolve uma admiração secreta e profunda pelos braços de D. Severina, a companheira de seu patrão. Tenha uma boa experiência e boa sorte! Ah, e cuidado com as suas escolhas... elas são mais importantes do que parecem.<img src='./assets/imgs/eyes.gif' class='w-8 inline-block ml-4 -translate-y-1'></img></div>",
+        styleClass: 'realidade',
+        opcoes: [{ texto: "Entendi, vamos começar", target: 'inicio' }]
+    },
     inicio: {
         texto: "<div>Você é <span class='font-bold'>Inácio</span>. Tem quinze anos. Um rapaz bonito, com um olhar sonhador.<br><br>Sua vida é silenciosa e monótona na casa do solicitador Borges. Hoje é mais um dia, e o jantar está servido.</div>",
         styleClass: 'realidade',
@@ -133,7 +139,7 @@ function audio(){
     if (!audio_fundo){    
         audio_fundo = new Audio("./assets/sounds/music.mp3")
         audio_fundo.currentTime = 0
-        audio_fundo.volume = 0.03
+        audio_fundo.volume = 0.1
         audio_fundo.loop = true
     }
     audio_fundo.play().catch(() => {
@@ -197,7 +203,11 @@ function mostrarCena(idCena) {
                 audio_button()
                 mostrarCena(opcao.target);
                 if(opcao.target == 'inicio'){
-                    audio_fundo.currentTime = 0
+                    if(flag){
+                        audio_fundo.currentTime = 0
+                    }else{
+                        flag = true
+                    }
                 }
             });
             opcoesEl.appendChild(btn);
@@ -208,8 +218,7 @@ function mostrarCena(idCena) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    mostrarCena('inicio');
+    mostrarCena('sinopse');
     audio()
 });
-
 
