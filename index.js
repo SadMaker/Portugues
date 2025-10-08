@@ -90,7 +90,7 @@ const historia = {
         ]
     },
     confronto: {
-        texto: `Você a encara. Seu sorriso é uma pergunta silenciosa. D. Severina percebe, e o rosto dela se enche de medo e raiva. Ela desvia o olhar bruscamente.<br><br>Borges, que não é bobo, percebe a tensão no ar.<br><br><span class='font-bold uppercase text-[#ff9999]'>"QUE OLHARES SÃO ESSES, MOLEQUE ATREVIDO?"</span>`,
+        texto: `Você a encara. Seu sorriso é uma pergunta silenciosa. D. Severina percebe, e o rosto dela se enche de medo e raiva. Ela desvia o olhar bruscamente.<br><br>Borges, que não é bobo, percebe a tensão no ar.<br><br><span class='font-bold uppercase text-[#ff9999]'>"QUE OLHARES SÃO ESSES?, MOLEQUE ATREVIDO!"</span>`,
         styleClass: 'realidade',
         opcoes: [
             { texto: "Ficar calado, paralisado de medo.", target: 'defesa_severina' },
@@ -98,7 +98,7 @@ const historia = {
         ]
     },
     defesa_severina: {
-        texto: "Antes que você possa reagir, D. Severina se vira para Borges, com uma falsa indignação.<br><br><i>'É o que eu te digo, Borges. Este rapaz anda com uns modos estranhos, um atrevimento... Não me sinto mais à vontade. Olhe só para ele!'</i><br><br>Ela mente para se proteger, temendo que você possa ter entendido o que aconteceu com o beijo. A mentira dela decide o seu futuro.",
+        texto: "Antes que você possa reagir, D. Severina se vira para Borges, com uma falsa indignação.<br><br><i>'É o que eu te digo, Borges. Este rapaz anda com uns modos estranhos, um atrevimento... Não me sinto mais à vontade. Olhe só para ele!'</i><br><br>Ela mente para se proteger, temendo que você saiba sobre o beijo. A mentira dela decide o seu futuro.",
         styleClass: 'realidade',
         opcoes: [
             { texto: "...", target: 'fim_expulso' }
