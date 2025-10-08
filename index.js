@@ -90,7 +90,7 @@ const historia = {
         ]
     },
     confronto: {
-        texto: `Você a encara. Seu sorriso é uma pergunta silenciosa. D. Severina percebe, e o rosto dela se enche de medo e raiva. Ela desvia o olhar bruscamente.<br><br>Borges, que não é bobo, percebe a tensão no ar.<br><br><span class='font-bold uppercase text-[#ff9999]'>"QUE OLHARES SÃO ESSES?, MOLEQUE ATREVIDO!"</span>`,
+        texto: `Você a encara. Seu sorriso é uma pergunta silenciosa. D. Severina percebe, e o rosto dela se enche de medo e raiva. Ela desvia o olhar bruscamente.<br><br>Borges, que não é bobo, percebe a tensão no ar.<br><br><span class='font-bold uppercase text-[#ff9999]'>"QUE OLHARES SÃO ESSES?! MOLEQUE ATREVIDO!"</span>`,
         styleClass: 'realidade',
         opcoes: [
             { texto: "Ficar calado, paralisado de medo.", target: 'defesa_severina' },
